@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1773926491680",
+    "callerId": "+1-555-SPAM",
+    "transcript": "Congratulations! You won a $1000 lottery prize. Apply for instant loan!",
+    "analysis": {
+      "isSpam": true,
+      "matchedKeywords": [
+        "lottery",
+        "prize",
+        "loan"
+      ],
+      "confidence": 50
+    },
+    "timestamp": "2026-03-19T13:21:31.680Z"
+  }
+]

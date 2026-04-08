@@ -1,0 +1,367 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@voxguard.com",
+      "password": "$2b$10$OLvxG92mHky2tl2.j9pqiOrtM6RTUlAEJGKwjkf468EQXgirSlRNi"
+    }
+  ],
+  "keywords": [
+    "lottery",
+    "prize",
+    "free money",
+    "loan approved",
+    "win now"
+  ],
+  "logs": [
+    {
+      "id": "1775672942800evhp2gvpz",
+      "callerId": "+1-555-3916",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-08T18:29:02.800Z"
+    },
+    {
+      "id": "1775669911168ty4ryz9xh",
+      "callerId": "+1-555-5635",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "sessionId": null,
+      "analysis": {
+        "isSpam": true,
+        "confidence": 33,
+        "nlpKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "dbKeywords": [],
+        "totalKeywordsChecked": 0,
+        "reason": "NLP(33%) + Keywords(0%)"
+      },
+      "timestamp": "2026-04-08T17:38:31.168Z",
+      "createdAt": 1775669911168
+    },
+    {
+      "id": "1775669899245ttrtpklx4",
+      "callerId": "+1-555-2402",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "sessionId": null,
+      "analysis": {
+        "isSpam": true,
+        "confidence": 33,
+        "nlpKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "dbKeywords": [],
+        "totalKeywordsChecked": 0,
+        "reason": "NLP(33%) + Keywords(0%)"
+      },
+      "timestamp": "2026-04-08T17:38:19.245Z",
+      "createdAt": 1775669899245
+    },
+    {
+      "id": "17756698983296aq4zi8hs",
+      "callerId": "+1-555-4813",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "sessionId": null,
+      "analysis": {
+        "isSpam": true,
+        "confidence": 33,
+        "nlpKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "dbKeywords": [],
+        "totalKeywordsChecked": 0,
+        "reason": "NLP(33%) + Keywords(0%)"
+      },
+      "timestamp": "2026-04-08T17:38:18.329Z",
+      "createdAt": 1775669898329
+    },
+    {
+      "id": "1775666776111o8mdg0ebp",
+      "callerId": "+1-555-8321",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-08T16:46:16.111Z"
+    },
+    {
+      "id": "17756667665961z06de6id",
+      "callerId": "+1-555-2604",
+      "transcript": "Bank calling about your account balance.",
+      "analysis": {
+        "isSpam": false,
+        "matchedKeywords": [],
+        "confidence": 0
+      },
+      "timestamp": "2026-04-08T16:46:06.596Z"
+    },
+    {
+      "id": "17756667613455w9m4c1dj",
+      "callerId": "+1-555-9949",
+      "transcript": "Bank calling about your account balance.",
+      "analysis": {
+        "isSpam": false,
+        "matchedKeywords": [],
+        "confidence": 0
+      },
+      "timestamp": "2026-04-08T16:46:01.345Z"
+    },
+    {
+      "id": "1775666694956t2y59yb5x",
+      "callerId": "+1-555-5413",
+      "transcript": "Bank calling about your account balance.",
+      "analysis": {
+        "isSpam": false,
+        "matchedKeywords": [],
+        "confidence": 0
+      },
+      "timestamp": "2026-04-08T16:44:54.956Z"
+    },
+    {
+      "id": "17756505493759tbyh3hbw",
+      "callerId": "+1-555-4579",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-08T12:15:49.375Z"
+    },
+    {
+      "id": "1775642822995vulb6ibrq",
+      "callerId": "+1-555-8778",
+      "transcript": "Bank calling about your account balance.",
+      "analysis": {
+        "isSpam": false,
+        "matchedKeywords": [],
+        "confidence": 0
+      },
+      "timestamp": "2026-04-08T10:07:02.995Z"
+    },
+    {
+      "id": "1775642816996ch6cndps5",
+      "callerId": "+1-555-8293",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-08T10:06:56.996Z"
+    },
+    {
+      "id": "1775642807731e9se8gxxa",
+      "callerId": "+1-555-2951",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-08T10:06:47.731Z"
+    },
+    {
+      "id": "17756421211205thmbop8g",
+      "callerId": "+1-555-7491",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-08T09:55:21.120Z"
+    },
+    {
+      "id": "17756412471210s4n23ic1",
+      "callerId": "+1-555-8189",
+      "transcript": "Bank calling about your account balance.",
+      "analysis": {
+        "isSpam": false,
+        "matchedKeywords": [],
+        "confidence": 0
+      },
+      "timestamp": "2026-04-08T09:40:47.121Z"
+    },
+    {
+      "id": "1775641243580ngaxcg7e0",
+      "callerId": "+1-555-8462",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-08T09:40:43.580Z"
+    },
+    {
+      "id": "177564123377434rbu3dr9",
+      "callerId": "+1-555-4751",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-08T09:40:33.774Z"
+    },
+    {
+      "id": "1775641231521pfppfm9qn",
+      "callerId": "+1-555-1962",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-08T09:40:31.521Z"
+    },
+    {
+      "id": "17752704904635q1i5lww3",
+      "callerId": "+1-555-7926",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-04T02:41:30.463Z"
+    },
+    {
+      "id": "1775270489648s7brh8ovn",
+      "callerId": "+1-555-4225",
+      "transcript": "Bank calling about your account balance.",
+      "analysis": {
+        "isSpam": false,
+        "matchedKeywords": [],
+        "confidence": 0
+      },
+      "timestamp": "2026-04-04T02:41:29.648Z"
+    },
+    {
+      "id": "17752704888950n0sbnz9c",
+      "callerId": "+1-555-2752",
+      "transcript": "Bank calling about your account balance.",
+      "analysis": {
+        "isSpam": false,
+        "matchedKeywords": [],
+        "confidence": 0
+      },
+      "timestamp": "2026-04-04T02:41:28.895Z"
+    },
+    {
+      "id": "1775270488051frod0ht35",
+      "callerId": "+1-555-314",
+      "transcript": "Bank calling about your account balance.",
+      "analysis": {
+        "isSpam": false,
+        "matchedKeywords": [],
+        "confidence": 0
+      },
+      "timestamp": "2026-04-04T02:41:28.051Z"
+    },
+    {
+      "id": "17752704863615ngmdgz19",
+      "callerId": "+1-555-365",
+      "transcript": "Bank calling about your account balance.",
+      "analysis": {
+        "isSpam": false,
+        "matchedKeywords": [],
+        "confidence": 0
+      },
+      "timestamp": "2026-04-04T02:41:26.361Z"
+    },
+    {
+      "id": "1775270484260a1hok125q",
+      "callerId": "+1-555-7059",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-04T02:41:24.260Z"
+    },
+    {
+      "id": "1775270483385pzh4c4zpm",
+      "callerId": "+1-555-6324",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-04T02:41:23.385Z"
+    },
+    {
+      "id": "1775270482182864wxnq3f",
+      "callerId": "+1-555-5737",
+      "transcript": "You won $1M lottery! Claim free loan now!",
+      "analysis": {
+        "isSpam": true,
+        "matchedKeywords": [
+          "lottery",
+          "loan"
+        ],
+        "confidence": 33
+      },
+      "timestamp": "2026-04-04T02:41:22.182Z"
+    },
+    {
+      "id": "1775270481110503bh5dum",
+      "callerId": "+1-555-235",
+      "transcript": "Bank calling about your account balance.",
+      "analysis": {
+        "isSpam": false,
+        "matchedKeywords": [],
+        "confidence": 0
+      },
+      "timestamp": "2026-04-04T02:41:21.110Z"
+    }
+  ]
+}
