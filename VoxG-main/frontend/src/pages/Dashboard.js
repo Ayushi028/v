@@ -6,9 +6,8 @@ import '../App.css';
 function Dashboard({ darkMode = false, toggleDarkMode = () => {} }) {
   const navigate = useNavigate();
   
-  // State
+  // State - REMOVED unused totalHistory
   const [stats, setStats] = useState({ callsDetected: 0, spamBlocked: 0 });
-  const [totalHistory, setTotalHistory] = useState({ callsDetected: 0, spamBlocked: 0 });
   const [sessionTime, setSessionTime] = useState(0);
   const [sensitivity, setSensitivity] = useState(50);
   const [loading, setLoading] = useState(true);
@@ -65,11 +64,7 @@ function Dashboard({ darkMode = false, toggleDarkMode = () => {} }) {
     console.log(`📞 ${callerId} | ${isScam ? '🚨 SCAM' : '✅ SAFE'}`);
     console.log(`💬 "${transcript}"`);
 
-    // Update local history FIRST (optimistic update)
-    setTotalHistory(prev => ({
-      callsDetected: prev.callsDetected + 1,
-      spamBlocked: prev.spamBlocked + (isScam ? 1 : 0)
-    }));
+    // REMOVED totalHistory update - was unused
 
     try {
       const response = await api.logs.report({
