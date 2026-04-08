@@ -1,4 +1,4 @@
-// ✅ COMPLETE - Copy this entire file (UPDATED with keyword scanner)
+// ✅ COMPLETE - Copy this entire file (ESLINT FIXED - NO SCANNER)
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,11 +11,6 @@ function ManageKeywords({ darkMode, toggleDarkMode }) {
   const [deleting, setDeleting] = useState(null);
   const [error, setError] = useState('');
   const [backendStatus, setBackendStatus] = useState('❓ Checking...');
-  
-  // 👇 NEW: Keyword Scanner
-  const [scanText, setScanText] = useState('');
-  const [scanResult, setScanResult] = useState('');
-  const [scanning, setScanning] = useState(false);
 
   useEffect(() => {
     checkBackend();
@@ -115,30 +110,6 @@ function ManageKeywords({ darkMode, toggleDarkMode }) {
     }
   };
 
-  // 👇 NEW: Scan Text for Keywords
-  const scanTextForKeywords = async () => {
-    if (!scanText.trim()) return;
-    try {
-      setScanning(true);
-      const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:5001/api/scan', {
-        method: 'POST',
-        headers: { 
-          'Authorization': `Bearer ${token}`, 
-          'Content-Type': 'application/json' 
-        },
-        body: JSON.stringify({ text: scanText.trim() })
-      });
-      
-      const data = await res.json();
-      setScanResult(data.message || 'No keywords found');
-    } catch (err) {
-      setScanResult('❌ Scan failed - Check backend');
-    } finally {
-      setScanning(false);
-    }
-  };
-
   if (loading) return <div className="loading">🔄 Loading...</div>;
 
   return (
@@ -167,8 +138,6 @@ function ManageKeywords({ darkMode, toggleDarkMode }) {
         )}
 
         {error && <div className="error-message">❌ {error}</div>}
-
-        
 
         {/* ADD FORM */}
         <div className="add-box">
@@ -210,34 +179,6 @@ function ManageKeywords({ darkMode, toggleDarkMode }) {
         .status { padding: 10px; border-radius: 6px; margin: 10px 0; }
         .status.success { background: #d1fae5; color: #065f46; }
         .status.error { background: #fee2e2; color: #dc2626; }
-        
-        /* 👇 SCANNER STYLES */
-        .scanner-section { 
-          background: #f8fafc; padding: 20px; border-radius: 12px; 
-          margin: 20px 0; border: 2px solid #e2e8f0;
-        }
-        .dark-container .scanner-section { 
-          background: #1e293b; border-color: #334155; 
-        }
-        .scan-input { 
-          width: 100%; padding: 12px; border: 2px solid #cbd5e1; 
-          border-radius: 8px; font-family: monospace; resize: vertical;
-          margin-bottom: 10px;
-        }
-        .dark-container .scan-input { background: #0f172a; color: white; border-color: #475569; }
-        .scan-button { 
-          background: #f59e0b; color: white; border: none; 
-          padding: 12px 24px; border-radius: 8px; cursor: pointer; 
-          font-weight: bold; width: 100%;
-        }
-        .scan-button:hover:not(:disabled) { background: #d97706; }
-        .scan-button:disabled { opacity: 0.6; cursor: not-allowed; }
-        .scan-result { 
-          background: #1f2937; color: #10b981; padding: 16px; 
-          border-radius: 8px; font-family: monospace; 
-          white-space: pre-wrap; margin-top: 12px; max-height: 200px; overflow-y: auto;
-        }
-        .dark-container .scan-result { background: #0f172a; }
         
         .add-box { display: flex; gap: 10px; margin: 20px 0; }
         .keyword-input { flex: 1; padding: 12px; border: 2px solid #ccc; border-radius: 6px; }
