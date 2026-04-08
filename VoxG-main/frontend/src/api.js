@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:5001/api';
+const API_BASE = process.env.REACT_APP_API_URL; // ✅ dynamic
 const API = axios.create({ baseURL: API_BASE });
 
 // 🔥 AUTO ADD TOKEN
@@ -14,7 +14,7 @@ API.interceptors.request.use(config => {
 
 export const api = {
   auth: {
-    login: (username, password) => API.post('/auth/login', { username, password }), // ✅ FIXED
+    login: (username, password) => API.post('/auth/login', { username, password }),
   },
   keywords: {
     getAll: () => API.get('/keywords'),
