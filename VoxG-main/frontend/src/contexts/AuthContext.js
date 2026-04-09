@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // ✅ Use environment variable for API base URL
-  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5001/api";
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5001";
 
   // 🔥 Check token on startup
   useEffect(() => {
@@ -28,7 +28,8 @@ export const AuthProvider = ({ children }) => {
     try {
       console.log('🔐 Login attempt:', username);
 
-      const response = await fetch(`${API_URL}/auth/login`, {
+      // ✅ Correct path includes /api
+      const response = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
