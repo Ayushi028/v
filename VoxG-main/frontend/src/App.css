@@ -1897,3 +1897,70 @@ button:hover {
     padding: 0.8rem;
     transition: 0.3s;
 }
+.spam-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6); /* neutral dark overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spam-popup {
+  background: #8B0000; /* dark red danger box */
+  color: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 320px; /* smaller box */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  text-align: left;
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.popup-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.confidence-bar {
+  background: rgba(255,255,255,0.2);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.confidence-fill {
+  background: linear-gradient(90deg, #ff4d4d, #b22222);
+  height: 8px;
+}
+
+.keyword-tag {
+  background: rgba(255,255,255,0.2);
+  padding: 4px 8px;
+  border-radius: 12px;
+  margin: 4px;
+  font-size: 0.8rem;
+}
+
+.dismiss-btn {
+  /* background: #fff; */
+  color: #8B0000;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dismiss-btn:hover {
+  background: #f5f5f5;
+}
