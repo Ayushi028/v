@@ -304,7 +304,7 @@ function Dashboard({ darkMode = false, toggleDarkMode = () => {} }) {
             </div>
             
             <div className="popup-footer">
-              <small>Auto-dismiss in 5s | VoxGuard Protection Active</small>
+              <small>Auto-dismiss in 10s | VoxGuard Protection Active</small>
             </div>
           </div>
         </div>
