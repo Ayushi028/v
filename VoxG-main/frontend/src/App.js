@@ -35,7 +35,7 @@ function AppContent() {
             🚪 Logout
           </button>
           <div className="nav-brand">
-            <span>🛡️ VoxGuard</span>
+            <span> VoxGuard</span>
           </div>
         </div>
 
