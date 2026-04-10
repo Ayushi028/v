@@ -1815,3 +1815,85 @@ button:hover {
 .app-wrapper.dark-mode button:hover {
   filter: brightness(1.2);
 }
+/* Capsule-style nav bar */
+.app-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #007BFF; /* Blue highlight */
+  border-radius: 50px;       /* Capsule shape */
+  padding: 0.5rem 1rem;
+  margin: 1rem auto;
+  max-width: 1200px;
+}
+
+/* Left, center, right sections */
+.nav-left, .nav-center, .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Center links styling */
+.nav-center a {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none; /* remove underline */
+  color: var(--nav-link-color);
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-center a:hover {
+  color: #007BFF; /* Blue highlight on hover */
+}
+
+/* Dark/light mode adaptive colors */
+:root {
+  --nav-link-color: #222; /* Default for light mode */
+}
+
+[data-theme="dark"] {
+  --nav-link-color: #f0f0f0; /* Light text for dark mode */
+}
+
+/* Buttons inside nav */
+.logout-nav-btn, .dark-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+/* Dark mode toggle button */
+.dark-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;       /* Circle shape */
+  background-color: #ffffff; /* Constant white circle */
+  color: #007BFF;            /* Blue icon inside */
+  border: 2px solid #007BFF; /* Blue outline for capsule consistency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+/* Keep it consistent on hover */
+.dark-toggle:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+.dark-toggle {
+    backdrop-filter: blur(10px);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-image: initial;
+    border-radius: 50%;
+    padding: 0.8rem;
+    transition: 0.3s;
+}
