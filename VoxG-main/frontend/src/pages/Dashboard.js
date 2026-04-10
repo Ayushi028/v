@@ -15,6 +15,10 @@ function Dashboard({ darkMode = false, toggleDarkMode = () => {} }) {
   const [lastCallResult, setLastCallResult] = useState(null);
   const [isTestingCall, setIsTestingCall] = useState(false);
   const [error, setError] = useState(null);
+  
+  // 🔥 SPAM POPUP STATE
+  const [showSpamPopup, setShowSpamPopup] = useState(false);
+  const [spamPopupData, setSpamPopupData] = useState(null);
 
   // Constants
   const TEST_CALL_CONFIG = {
@@ -49,6 +53,17 @@ function Dashboard({ darkMode = false, toggleDarkMode = () => {} }) {
     if (sensitivity < 70) return 'medium';
     return 'high';
   }, [sensitivity]);
+
+  // 🔥 SHOW SPAM POPUP FUNCTION
+  const showSpamAlert = useCallback((result) => {
+    setSpamPopupData(result);
+    setShowSpamPopup(true);
+    
+    // Auto-dismiss after 5 seconds
+    setTimeout(() => {
+      setShowSpamPopup(false);
+    }, 5000);
+  }, []);
 
   // Load stats from backend
   const loadStats = useCallback(async () => {
@@ -134,7 +149,7 @@ function Dashboard({ darkMode = false, toggleDarkMode = () => {} }) {
     }, true);
   };
 
-  // Test call handler
+  // Test call handler - NOW SHOWS SPAM POPUP
   const addCall = useCallback(async () => {
     if (isTestingCall) return;
     
@@ -155,9 +170,19 @@ function Dashboard({ darkMode = false, toggleDarkMode = () => {} }) {
     const result = await processCallAnalysis(callerId, duration, transcript);
     setLastCallResult(result);
     
+    // 🔥 SHOW SPAM POPUP IF SPAM DETECTED
+    if (result.type === 'spam') {
+      showSpamAlert({
+        ...result,
+        callerId,
+        duration,
+        transcript
+      });
+    }
+    
     setTimeout(() => setIsTestingCall(false), 2000);
     loadStats();
-  }, [loadStats, isTestingCall]);
+  }, [loadStats, isTestingCall, showSpamAlert]);
 
   // Format session time
   const formatTime = useCallback((seconds) => {
@@ -178,6 +203,12 @@ function Dashboard({ darkMode = false, toggleDarkMode = () => {} }) {
       addCall();
     }
   }, [addCall]);
+
+  // Close spam popup
+  const closeSpamPopup = useCallback(() => {
+    setShowSpamPopup(false);
+    setSpamPopupData(null);
+  }, []);
 
   // Persist sensitivity
   useEffect(() => {
@@ -229,6 +260,56 @@ function Dashboard({ darkMode = false, toggleDarkMode = () => {} }) {
 
   return (
     <div className={`dashboard-container ${darkMode ? 'dark-container' : ''}`} role="main">
+      {/* 🔥 SPAM DETECTION POPUP */}
+      {showSpamPopup && spamPopupData && (
+        <div className={`spam-popup-overlay ${darkMode ? 'dark-overlay' : ''}`} role="alertdialog" aria-label="Spam call detected">
+          <div className={`spam-popup ${darkMode ? 'dark-popup' : ''}`}>
+            <div className="popup-header">
+              <div className="popup-icon">🚨</div>
+              <h3>SPAM CALL BLOCKED!</h3>
+            </div>
+            
+            <div className="popup-content">
+              <div className="call-details">
+                <div className="caller-info">
+                  <span className="caller-id">📞 {spamPopupData.callerId}</span>
+                  <span className="call-duration">⏱️ {spamPopupData.duration}s</span>
+                </div>
+                <div className="confidence-bar">
+                  <div 
+                    className="confidence-fill"
+                    style={{ width: `${spamPopupData.confidence}%` }}
+                  />
+                  <span>{Math.round(spamPopupData.confidence)}% confidence</span>
+                </div>
+              </div>
+              
+              
+              {spamPopupData.transcript && (
+                <div className="transcript-preview">
+                  <strong>💬 Transcript Preview:</strong>
+                  <p>{spamPopupData.transcript.substring(0, 100)}...</p>
+                </div>
+              )}
+            </div>
+            
+            <div className="popup-actions">
+              <button 
+                className="dismiss-btn"
+                onClick={closeSpamPopup}
+                aria-label="Dismiss spam alert"
+              >
+                ✅ Got it!
+              </button>
+            </div>
+            
+            <div className="popup-footer">
+              <small>Auto-dismiss in 5s | VoxGuard Protection Active</small>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <header className={`header ${darkMode ? 'dark-header' : ''}`}>
         <div className="header-top">
@@ -389,6 +470,8 @@ function Dashboard({ darkMode = false, toggleDarkMode = () => {} }) {
           </div>
         </button>
       </section>
+
+      
 
       {/* Debug & Privacy */}
       <footer className={`footer-section ${darkMode ? 'dark-section' : ''}`}>
